@@ -1,20 +1,35 @@
-#list of entities
+# list of entities
 contactBook = []
 
-def addContact(name,phoneNumber,email):
-    contactEntity  = {}
-    contactEntity["name"] = name
-    contactEntity["phoneNumber"] = phoneNumber
-    contactEntity["email"] = email
-    contactBook.__add__(contactEntity)
 
-def removeContact(name):
-    for contact in contactBook:
-        if contact["name"] == name:
-            print("Contact with name "+name+" was deleted")
-            contactBook.remove(contact)
+def showBook(book):
+    for contact in book:
+        print("Name:",contact['name'],";",
+              "Last Name:",contact['lastName'],";",
+              "Phone Number:",contact["number"])
+
+def showContact(name,book):
+    for contact in book:
+        if contact["name"] ==name:
+            print("Name:",contact['name'],";",
+              "Last Name:",contact['lastName'],";",
+              "Phone Number:",contact["number"])
             return
     else:
-        print ("Contact with name "+name+ " was not found")
+        print("Contact with name " + name + " was not found.")
+
+
+
+
+contactBook = [{"name":"vasya","lastName":"Grek","number":"245"},
+               {"name":"Roma","lastName":"Luk","number":"222"},
+               {"name":"Victor","lastName":"Agnastasiev","number":"977"}]
+
+
+
+contactBook.sort(key= lambda x: len(x["lastName"]))
+showBook(contactBook)
+showContact("Roma",contactBook)
+
 
 
