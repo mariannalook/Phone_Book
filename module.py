@@ -33,3 +33,5 @@ showContact("Roma",contactBook)
 
 
 
+def Test():
+    pass
