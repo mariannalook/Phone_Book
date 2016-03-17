@@ -1,13 +1,12 @@
-
 from Info import *
 
 
-#com
+# com
 
 class Edit_information:
-#Add new contact
+    # Add new contact
     def add(self):
-        #input new contacts date
+        # input new contacts date
         name = input('Input name,please!')
         sername = input('Input sername,please!')
         phone = input('Input phone number,please!')
@@ -52,11 +51,8 @@ If you want delete for number - input 3''')
             for i in range(len(ind_del)):
                 print(all_information[i], ' - delete this contact input', i)
             ch = int(input())
-            #print(ind_del[ch])
+            # print(ind_del[ch])
             all_information.pop(ind_del[ch])
-
-
-
 
     def edit_record(self):
         choose = input('''If you want edit for name - input 1
@@ -103,20 +99,16 @@ If you want edit for number - input 3''')
             new_phone = input('Input sername')
             Edit_information().tmp_edit(new_name, new_sername, new_phone, flag[ch])
 
-
-
-
     def see_all(self):
         for i in all_information:
-            print('Name: ',i['Name'],'Sername: ', i['Sername'], 'Phone: ',i['Phone'])
+            print('Name: ', i['Name'], 'Sername: ', i['Sername'], 'Phone: ', i['Phone'])
 
     def see_contact(self):
         de = input('Input name,sername or number')
         for i in all_information:
             if de == i['Name']:
-                print('Name: ',i['Name'],'Sername: ', i['Sername'], 'Phone: ',i['Phone'])
+                print('Name: ', i['Name'], 'Sername: ', i['Sername'], 'Phone: ', i['Phone'])
             if de == i['Sername']:
-                print('Name: ',i['Name'],'Sername: ', i['Sername'], 'Phone: ',i['Phone'])
+                print('Name: ', i['Name'], 'Sername: ', i['Sername'], 'Phone: ', i['Phone'])
             if de == i['Phone']:
-                print('Name: ',i['Name'],'Sername: ', i['Sername'], 'Phone: ',i['Phone'])
-
+                print('Name: ', i['Name'], 'Sername: ', i['Sername'], 'Phone: ', i['Phone'])
