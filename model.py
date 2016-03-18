@@ -1,4 +1,4 @@
-from Info import *
+from Info import all_information
 
 
 # com
@@ -21,15 +21,18 @@ class Edit_information:
                 tmp['Name'] = name
                 tmp['Sername'] = sername
                 tmp['Phone'] = phone
-                all_information.append(tmp)
+        all_information.append(tmp)
+
+    def sort(self):
+        all_information.sort(key=lambda x: len(x["Sername"]))
 
     def delete_record(self):
         choose = input('''If you want delete for name - input 1
-If you want delete for sername - input 2
-If you want delete for number - input 3''')
+            If you want delete for sername - input 2
+            If you want delete for number - input 3''')
         ed = input(('Input,please'))
         Edit_information().tmp_del(choose, ed)
-        print(all_information)
+        #print(all_information)
 
     def tmp_del(self, ch, ed):
         if ch == '1':
@@ -88,7 +91,7 @@ If you want edit for number - input 3''')
         if len(flag) == 1:
             new_name = input('Input new name')
             new_sername = input('Input new sername')
-            new_phone = input('Input sername')
+            new_phone = input('Input new phone')
             Edit_information().tmp_edit(new_name, new_sername, new_phone, flag[0])
         if len(flag) > 1:
             for i in range(len(flag)):
@@ -96,7 +99,7 @@ If you want edit for number - input 3''')
             ch = int(input())
             new_name = input('Input new name')
             new_sername = input('Input new sername')
-            new_phone = input('Input sername')
+            new_phone = input('Input new phone')
             Edit_information().tmp_edit(new_name, new_sername, new_phone, flag[ch])
 
     def see_all(self):
