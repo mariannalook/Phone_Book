@@ -1,7 +1,5 @@
-from test import menu
+from view_menu import menu
 from model import *
-from module import showBook
-from Info import all_information
 
 while True:
     key = menu()
