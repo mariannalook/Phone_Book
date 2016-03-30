@@ -1,5 +1,5 @@
 from Info import all_information
-import doctest
+
 
 
 # com
@@ -7,12 +7,6 @@ import doctest
 class Edit_information:
     # Add new contact
     def add(self):
-        """ Method to input a new contacts date
-        :param self: reference to class
-        :returns None
-
-        >>> Edit_information().add()
-        """
         name = input('Input name,please!')
         surname = input('Input surname,please!')
         phone = input('Input phone number,please!')
@@ -121,5 +115,3 @@ class Edit_information:
             if de == i['Phone']:
                 print('Name: ', i['Name'], 'Surname: ', i['Surname'], 'Phone: ', i['Phone'])
 
-
-doctest.testmod()
