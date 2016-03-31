@@ -11,12 +11,12 @@ def showMenu():
                  "4 - Sort by length\n"
                  "5 - Show book\n"
                  "6- Show contact\n"
-                 "7- Exit")
+                 "7- Exit\n")
 
 def addInput():
     name=input("Enter the name:")
     surname=input("Enter the surname:")
-    phone=input("Enter the phone number")
+    phone=input("Enter the phone number:")
     addContact(name,surname,phone)
 
 def editInput():
@@ -63,7 +63,7 @@ while True:
     elif key =="5":
         showBook()
     elif key =="6":
-        pass
+        showInput()
     elif key =="7":
         exit()
     else:

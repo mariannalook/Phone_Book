@@ -28,10 +28,6 @@ def getContactByName(name):
     :param name:
     :returns: contact.Else false
 
-    >>> addContact("Name1","Surname1","Phone1")
-    'Contact with name: Name1 was added'
-    >>> getContactByName("Name1")
-    {'Name': 'Name1', 'Surname': 'Surname1', 'Phone': 'Phone1'}
     """
     for dict in all_information:
         if dict['Name']==name:
@@ -44,10 +40,6 @@ def getContactByPhone(phone):
     :param phone: contact phone
     :returns: contact.Else false
 
-    >>> addContact("Name1","Surname1","Phone1")
-    'Contact with name: Name1 was added'
-    >>> getContactByPhone("Phone1")
-    {'Name': 'Name1', 'Surname': 'Surname1', 'Phone': 'Phone1'}
     """
     for dict in all_information:
         if dict['Phone']==phone:

@@ -1,4 +1,4 @@
-from model import all_information
+from test_model import all_information
 
 def showBook():
     for contact in all_information:
