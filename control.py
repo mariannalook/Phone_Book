@@ -4,6 +4,10 @@ from test_model import addContact, \
 from view import showContact,showBook
 
 def showMenu():
+    """
+    Main menu
+    :return:
+    """
     return input("Enter the key:\n"
                  "1 -Add \n"
                  "2- Edit \n"
@@ -14,12 +18,20 @@ def showMenu():
                  "7- Exit\n")
 
 def addInput():
+    """
+    Input for add option
+    :return:
+    """
     name=input("Enter the name:")
     surname=input("Enter the surname:")
     phone=input("Enter the phone number:")
     addContact(name,surname,phone)
 
 def editInput():
+    """
+    Input for edit option
+    :return:
+    """
     nameToEdit=input("Enter the contact`s name to edit:")
     newName=input("Enter the new name for contact:")
     newSurname=input("Enter the new surname for contact:")
@@ -27,6 +39,10 @@ def editInput():
     editContact(nameToEdit,newName,newSurname,newPhone)
 
 def deleteInput():
+    """
+    input for delete option
+    :return:
+    """
     manager=input("1 - Delete by name\n"
                   "2- Delete by phone number\n")
     if manager=='1':
@@ -39,6 +55,10 @@ def deleteInput():
         print("Incorrect key pressed.")
 
 def showInput():
+    """
+    input for show option
+    :return:
+    """
     manager=input("1 - Search by name\n"
                   "2- Search by phone number\n")
     if manager=='1':
