@@ -1,11 +1,10 @@
-from test_model import all_information
 
-def showBook():
+def showBook(obj):
     """
     This function shows book
     :return:
     """
-    for contact in all_information:
+    for contact in obj:
         print("Name:", contact['Name'], ";",
               "Last Name:", contact['Surname'], ";",
               "Phone Number:", contact["Phone"])
@@ -17,7 +16,7 @@ def showContact(contact):
     :param contact:
     :return:
     """
-    if contact !=False:
+    if contact:
         print("Name:", contact['Name'], ";",
             "Last Name:", contact['Surname'], ";",
             "Phone Number:", contact["Phone"])
