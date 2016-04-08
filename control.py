@@ -1,3 +1,6 @@
+"""
+controller
+"""
 from Model.model import addContact, \
     deleteContactByName, deleteContactByPhone, editContact, \
     sortByLengthOfName, getContactByName, getContactByPhone, \

@@ -1,3 +1,6 @@
+"""
+Model
+"""
 import configparser
 import Serial.spickle as spickle
 import Serial.sjson as sjson

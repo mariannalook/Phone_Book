@@ -1,3 +1,7 @@
+"""
+XML serialize
+"""
+
 from xml.etree.ElementTree import Element, SubElement
 from xml.etree import ElementTree
 from xml.dom import minidom

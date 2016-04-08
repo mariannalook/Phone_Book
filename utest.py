@@ -8,6 +8,9 @@ import pickle
 
 
 class SerialTest(unittest.TestCase):
+    """
+    class for testing
+    """
     def testYaml(self):
         """
         test yaml serialization

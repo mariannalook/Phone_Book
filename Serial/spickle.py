@@ -4,6 +4,7 @@ pickle module to serialize
 
 import pickle
 
+
 def write(obj, fname='Data/info.pickle'):
     """
     serialize user object in Pickle file
@@ -11,7 +12,7 @@ def write(obj, fname='Data/info.pickle'):
     :param fname: file name
     :return: nothing
     """
-    if type(obj)!=list:
+    if type(obj) != list:
         raise ValueError('Incorrect type of variable obj')
     with open(fname, 'wb') as file:
         pickle.dump(obj, file)
