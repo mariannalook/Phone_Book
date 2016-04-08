@@ -1,4 +1,3 @@
-
 def showBook(obj):
     """
     This function shows book
@@ -18,11 +17,5 @@ def showContact(contact):
     """
     if contact:
         print("Name:", contact['Name'], ";",
-            "Last Name:", contact['Surname'], ";",
-            "Phone Number:", contact["Phone"])
-
-
-
-
-
-
+              "Last Name:", contact['Surname'], ";",
+              "Phone Number:", contact["Phone"])
