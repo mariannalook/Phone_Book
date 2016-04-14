@@ -82,6 +82,20 @@ def showInput():
         print("Incorrect key pressed.")
 
 
+def userInteractionHandler():
+    """
+    Handle user actions:
+    e -> exit
+    s -> search by team
+    space -> full table
+    :return:
+    """
+    c = input()
+    # system("clear")
+    if c == ' ':
+        if c == 's': print("nothing here")
+
+
 def serialInput():
     """
     input for serial option

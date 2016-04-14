@@ -1,6 +1,6 @@
 def showBook(obj):
     """
-    This function shows book
+    This function shows our book
     :return:
     """
     for contact in obj:
@@ -11,7 +11,8 @@ def showBook(obj):
 
 def showContact(contact):
     """
-    This function shows contact
+    This function shows
+    our contact
     :param contact:
     :return:
     """
