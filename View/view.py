@@ -1,9 +1,11 @@
-def showBook(obj):
+
+def showBook(book):
     """
-    This function shows our book
+    This function shows
+    :param book:
     :return:
     """
-    for contact in obj:
+    for contact in book:
         print("Name:", contact['Name'], ";",
               "Last Name:", contact['Surname'], ";",
               "Phone Number:", contact["Phone"])
@@ -11,8 +13,7 @@ def showBook(obj):
 
 def showContact(contact):
     """
-    This function shows
-    our contact
+    This function shows contact
     :param contact:
     :return:
     """

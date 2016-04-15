@@ -90,10 +90,7 @@ def userInteractionHandler():
     space -> full table
     :return:
     """
-    c = input()
     # system("clear")
-    if c == ' ':
-        if c == 's': print("nothing here")
 
 
 def serialInput():
