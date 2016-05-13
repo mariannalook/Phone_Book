@@ -39,8 +39,6 @@ class ContactBook:
     def __setitem__(self, key, value):
         self.listBook[key] = value
 
-
-
     def __iter__(self):
         return iter(self.listBook)
 
@@ -127,10 +125,10 @@ class ContactBook:
         else:
             return False
 
-    def reload(self,values):
+    def reload(self, values):
         """
         reload list
         :param values:
         :return:
         """
-        self.listBook=values
+        self.listBook = values
