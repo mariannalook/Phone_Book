@@ -1,7 +1,8 @@
 """
 View
 """
-from Data.data import Contact,ContactBook
+from Data.data import Contact, ContactBook
+
 
 class View:
     @staticmethod
@@ -11,11 +12,12 @@ class View:
         :param obj:
         :return:
         """
-        if isinstance(obj,ContactBook):
+        if isinstance(obj, ContactBook):
             for contact in obj:
                 print(contact)
         else:
             raise ValueError('Incorrect type of variable obj')
+
     @staticmethod
     def showContact(item):
         """
@@ -23,14 +25,5 @@ class View:
         :param item:
         :return:
         """
-        if isinstance(item,Contact):
+        if isinstance(item, Contact):
             print(item)
-
-
-
-
-
-
-
-
-

@@ -2,11 +2,14 @@
 Model
 """
 import configparser
-import Serial.sxml as sxml
 from Serial.serial import Serial
 
 
 class Model:
+    """
+    model class
+    """
+
     @staticmethod
     def setTypeSerial(fname="Data/defaults.cfg"):
         """
@@ -22,9 +25,6 @@ class Model:
         if serialType == 'json':
             # JSON
             return Serial().readJson, Serial().writeJson
-        elif serialType == 'xml':
-            # XML
-            return sxml.read, sxml.write
         elif serialType == 'pickle':
             # pickle
             return Serial().readPickle, Serial().writePickle

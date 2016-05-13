@@ -4,36 +4,61 @@ Serial
 import pickle
 import json
 import yaml
-from Data.data import ContactBook,Contact
+from Data.data import ContactBook, Contact
+
 
 class Serial:
+    """
+    serial class
+    """
 
     @staticmethod
     def encode(obj):
-        tmpList=[]
+        """
+
+        :param obj:
+        :return:
+        """
+        tmpList = []
         for contact in obj:
-            tmpList.append({"Name":contact.name,
-                            "Surname":contact.surname,
-                            "Number":contact.number})
+            tmpList.append({"Name": contact.name,
+                            "Surname": contact.surname,
+                            "Number": contact.number})
         return tmpList
 
     @staticmethod
     def decode(obj):
-        tmpBook=ContactBook()
+        """
+
+        :param obj:
+        :return:
+        """
+        tmpBook = ContactBook()
         for dic in obj:
-            tmpContact=Contact(dic["Name"],dic["Surname"],dic["Number"])
+            tmpContact = Contact(dic["Name"], dic["Surname"], dic["Number"])
             tmpBook.addContact(tmpContact)
         return tmpBook
 
     @staticmethod
-    def writePickle(obj,fname='Data/info.pickle'):
-        if not isinstance(obj,ContactBook):
+    def writePickle(obj, fname='Data/info.pickle'):
+        """
+
+        :param obj:
+        :param fname:
+        :return:
+        """
+        if not isinstance(obj, ContactBook):
             raise ValueError('Incorrect type of variable obj')
         with open(fname, 'wb') as file:
             pickle.dump(obj, file)
 
     @staticmethod
     def readPickle(fname='Data/info.pickle'):
+        """
+
+        :param fname:
+        :return:
+        """
         try:
             with open(fname, 'rb') as file:
                 return pickle.load(file)
@@ -42,8 +67,14 @@ class Serial:
 
     @staticmethod
     def writeYaml(obj, fname='Data/info.yaml'):
+        """
 
-        if not isinstance(obj,ContactBook):
+        :param obj:
+        :param fname:
+        :return:
+        """
+
+        if not isinstance(obj, ContactBook):
             raise ValueError('Incorrect type of variable obj')
         with open(fname, 'wt') as file:
             yaml.dump(Serial().encode(obj), file)
@@ -63,8 +94,14 @@ class Serial:
 
     @staticmethod
     def writeJson(obj, fname="Data/info.json"):
+        """
 
-        if not isinstance(obj,ContactBook):
+        :param obj:
+        :param fname:
+        :return:
+        """
+
+        if not isinstance(obj, ContactBook):
             raise ValueError('Incorrect type of variable obj')
         with open(fname, 'wt') as file:
             json.dump(Serial().encode(obj), file)
