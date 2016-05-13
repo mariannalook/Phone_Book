@@ -87,6 +87,19 @@ class Control:
             print("Incorrect key pressed.")
 
     @staticmethod
+    def feedInput(book):
+        """
+        Input for edit option
+        :param book:
+        :return:
+        """
+        nameToEdit = input("Enter the contact`s name to edit:")
+        newName = input("Enter the new name for contact:")
+        newSurname = input("Enter the new surname for contact:")
+        newPhone = input("Enter the new phone number for contact:")
+        book.editContact(nameToEdit, newName, newSurname, newPhone)
+
+    @staticmethod
     def serialInput(book):
         """
         input for serialization
