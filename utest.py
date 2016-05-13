@@ -2,51 +2,45 @@
 unit testing
 """
 import unittest
-import yaml
-import json
-import pickle
+
+from Data.data import Contact,ContactBook
 
 
 class SerialTest(unittest.TestCase):
     """
     class for testing
     """
-    def testYaml(self):
-        """
-        test yaml serialization
-        :return: nothing
-        """
-        testInfo = [{"Name": "TestName", "Surname": "TestSurname",
-                     "Phone": "TestPhone"}]
+    def testContact(self):
+        a=Contact("vasya","petrov","222")
+        b=Contact("vasya","petrov","222")
+        self.assertEqual(a,b)
 
-        stringIO = yaml.dump(testInfo)
-        testInfo2 = yaml.load(stringIO)
-        self.assertEquals(testInfo, testInfo2)
+    def testAddContact(self):
+        a=Contact("vasya","petrov","222")
+        b=ContactBook()
+        b.addContact(a)
+        self.assertIn(a,b.listBook)
 
-    def testJSON(self):
-        """
-        test JSON serialization
-        :return: nothing
-        """
-        testInfo = [{"Name": "TestName", "Surname": "TestSurname",
-                     "Phone": "TestPhone"}]
+    def testDeleteContact(self):
+        a=Contact("vasya","petrov","222")
+        b=ContactBook()
+        b.addContact(a)
+        b.deleteContactByName("vasya")
+        self.assertNotIn(a,b.listBook)
 
-        stringIO = json.dumps(testInfo)
-        testInfo2 = json.loads(stringIO)
-        self.assertEquals(testInfo, testInfo2)
+    def testEditContact(self):
+        a=Contact("vasya","petrov","222")
+        b=ContactBook()
+        b.addContact(a)
+        b.editContact("vasya","petya","petrov","222")
+        a=b.getContactByName("petya")
+        self.assertIsInstance(a,Contact)
 
-    def testPickle(self):
-        """
-        test Pickle serialization
-        :return: nothing
-        """
-        testInfo = [{"Name": "TestName", "Surname": "TestSurname",
-                     "Phone": "TestPhone"}]
-
-        stringIO = pickle.dumps(testInfo)
-        testInfo2 = pickle.loads(stringIO)
-        self.assertEquals(testInfo, testInfo2)
-
+    def testReload(self):
+        b=ContactBook()
+        lst=[1,2,3]
+        b.reload(lst)
+        self.assertListEqual(b.listBook,lst)
 
 if __name__ == '__main__':
     unittest.main()

@@ -1,25 +1,33 @@
+"""
+View
+"""
+from Data.data import Contact,ContactBook
 
-def showBook(obj):
-    """
-    This function shows book
-    :return:
-    """
-    for contact in obj:
-        print("Name:", contact['Name'], ";",
-              "Last Name:", contact['Surname'], ";",
-              "Phone Number:", contact["Phone"])
+class View:
+    @staticmethod
+    def showBook(obj):
+        """
+        This function shows book
+        :param obj:
+        :return:
+        """
+        if isinstance(obj,ContactBook):
+            for contact in obj:
+                print(contact)
+        else:
+            raise ValueError('Incorrect type of variable obj')
+    @staticmethod
+    def showContact(item):
+        """
+        This function shows contact
+        :param item:
+        :return:
+        """
+        if isinstance(item,Contact):
+            print(item)
 
 
-def showContact(contact):
-    """
-    This function shows contact
-    :param contact:
-    :return:
-    """
-    if contact:
-        print("Name:", contact['Name'], ";",
-            "Last Name:", contact['Surname'], ";",
-            "Phone Number:", contact["Phone"])
+
 
 
 
