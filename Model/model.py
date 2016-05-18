@@ -34,3 +34,6 @@ class Model:
         else:
             # unknown type
             raise AttributeError('Incorrect serialization type')
+
+
+

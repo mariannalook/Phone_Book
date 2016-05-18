@@ -2,6 +2,7 @@
 unit testing
 """
 import unittest
+import unittest.mock as mock
 
 from Data.data import Contact,ContactBook
 
@@ -16,10 +17,14 @@ class SerialTest(unittest.TestCase):
         self.assertEqual(a,b)
 
     def testAddContact(self):
-        a=Contact("vasya","petrov","222")
         b=ContactBook()
-        b.addContact(a)
-        self.assertIn(a,b.listBook)
+        with mock.patch("Data.data.Contact")as mk:
+            instance = mk.return_value
+            instance.name="vasya"
+            instance.surname="petrov"
+            instance.number="222"
+            b.addContact(instance)
+            self.assertIn(instance,b.listBook)
 
     def testDeleteContact(self):
         a=Contact("vasya","petrov","222")
@@ -41,6 +46,8 @@ class SerialTest(unittest.TestCase):
         lst=[1,2,3]
         b.reload(lst)
         self.assertListEqual(b.listBook,lst)
+
+
 
 if __name__ == '__main__':
     unittest.main()
