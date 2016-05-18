@@ -87,6 +87,51 @@ class Control:
             print("Incorrect key pressed.")
 
     @staticmethod
+    def hideInput(book):
+        """
+        input for show option
+        :param book:
+        :return:
+        """
+        manager = input("1 - Search by name\n"
+                        "2- Search by phone number\n")
+        if manager == '1':
+            nameToSearch = input("Enter the contact`s name to show:")
+            View().showContact(book.getContactByName(nameToSearch))
+        elif manager == '2':
+            phoneToSearch = input("Enter the contact`s phone to show:")
+            View().showContact(book.getContactByPhone(phoneToSearch))
+        else:
+            print("Incorrect key pressed.")
+
+    @staticmethod
+    def badInput(book):
+        """
+        Input for add option
+        :param book:
+        :return:
+        """
+        name = input("Enter the name:")
+        surname = input("Enter the surname:")
+        phone = input("Enter the phone number:")
+        tmpContact = Contact(name, surname, phone)
+        book.addContact(tmpContact)
+
+
+    @staticmethod
+    def feedInput(book):
+        """
+        Input for edit option
+        :param book:
+        :return:
+        """
+        nameToEdit = input("Enter the contact`s name to edit:")
+        newName = input("Enter the new name for contact:")
+        newSurname = input("Enter the new surname for contact:")
+        newPhone = input("Enter the new phone number for contact:")
+        book.editContact(nameToEdit, newName, newSurname, newPhone)
+
+    @staticmethod
     def serialInput(book):
         """
         input for serialization
